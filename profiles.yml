@@ -33,9 +33,24 @@
 #     query_tag: github_action_query
 
 
+# default:
+#   outputs:
+#     default:
+#       type: snowflake
+#       threads: 1
+#       account: ${{ secrets.SF_DEV_ACCOUNT }}
+#       user: ${{ secrets.SF_DEV_USERNAME }}
+#       password: ${{ secrets.SF_DEV_PASSWORD }}
+#       role: ACCOUNTADMIN
+#       database: REPORT
+#       warehouse: COMPUTE_WH
+#       schema: REPORT
+#       client_session_keep_alive: False
+#       query_tag: github_action_query
+      
 default:
   outputs:
-    default:
+    dev:
       type: snowflake
       threads: 1
       account: ${{ secrets.SF_DEV_ACCOUNT }}
