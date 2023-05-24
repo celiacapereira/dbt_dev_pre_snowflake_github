@@ -32,6 +32,10 @@ jobs:
           dbt deps
         
       - name: Run dbt models
+        env:
+          SF_ACCOUNT: ${{ secrets.SF_DEV_ACCOUNT }}
+          SF_USERNAME: ${{ secrets.SF_DEV_USERNAME }}
+          SF_PASSWORD: ${{ secrets.SF_DEV_PASSWORD }}
         run: dbt run
 
       - name: Test dbt models
