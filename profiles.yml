@@ -17,7 +17,7 @@
 # #      query_tag: [anything]
 
 default:
-  target: "target"
+  target: dev
   outputs:
     dev:
     type: snowflake
