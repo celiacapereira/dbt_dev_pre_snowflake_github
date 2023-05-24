@@ -5,6 +5,7 @@ on:
   pull_request:
     branches: [ "dev_branch" ]
 env:
+  DBT_PROFILES_DIR: ./
   SF_ACCOUNT: ${{ secrets.SF_DEV_ACCOUNT }}
   SF_USERNAME: ${{ secrets.SF_DEV_USERNAME }}
   SF_PASSWORD: ${{ secrets.SF_DEV_PASSWORD }}
