@@ -1,0 +1,18 @@
+
+
+version: 2
+sources:
+  - name: titanic
+    description: source tpch data
+    database: DEV
+    schema: RAW
+    tables:
+      - name: TITANIC_RAW
+        description: main table
+        
+        columns:
+          - name: PASSENGERID
+            description: passenger id
+            tests: 
+              - unique
+              - not_null
