@@ -54,8 +54,8 @@ default:
       type: snowflake
       threads: 1
       account: "{{ env_var('SF_DEV_ACCOUNT') }}"
-      user: "{{ env_var('SF_DEV_USERNAME') }}"
-      password: "{{ secrets('SF_DEV_PASSWORD') }}"
+      user: "{{ env_var('SF_DEV_USERNAME) }}"
+      password: "{{ env_var('SF_DEV_PASSWORD) }}"
       role: ACCOUNTADMIN
       database: REPORT
       warehouse: COMPUTE_WH
