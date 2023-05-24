@@ -35,7 +35,7 @@
 
 default:
   outputs:
-    dev:
+    default:
       type: snowflake
       threads: 1
       account: ${{ secrets.SF_DEV_ACCOUNT }}
