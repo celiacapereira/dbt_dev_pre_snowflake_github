@@ -38,9 +38,9 @@ default:
     default:
       type: snowflake
       threads: 1
-      account: ${{ secrets.SF_DEV_ACCOUNT }}
-      user: ${{ secrets.SF_DEV_USERNAME }}
-      password: ${{ secrets.SF_DEV_PASSWORD }}
+      account: ${{ env_var('SF_DEV_ACCOUNT') }}
+      user: ${{ env_var('SF_DEV_USERNAME') }}
+      password: ${{ secrets('SF_DEV_PASSWORD') }}
       role: ACCOUNTADMIN
       database: REPORT
       warehouse: COMPUTE_WH
