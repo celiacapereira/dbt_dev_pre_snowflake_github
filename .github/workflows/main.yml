@@ -4,6 +4,11 @@ on:
   push:
   pull_request:
     branches: [ "dev_branch" ]
+env:
+  SF_ACCOUNT: ${{ secrets.SF_ACCOUNT }}
+  SF_USERNAME: ${{ secrets.SF_USERNAME }}
+  SF_PASSWORD: ${{ secrets.SF_PASSWORD }}
+
     
 jobs:
   build:
