@@ -6,9 +6,9 @@ on:
     branches: [ "dev_branch" ]
 env:
   DBT_PROFILES_DIR: ./
-  SF_ACCOUNT: ${{ secrets.SF_DEV_ACCOUNT }}
-  SF_USERNAME: ${{ secrets.SF_DEV_USERNAME }}
-  SF_PASSWORD: ${{ secrets.SF_DEV_PASSWORD }}
+  SF_DEV_ACCOUNT: ${{ secrets.SF_DEV_ACCOUNT }}
+  SF_DEV_USERNAME: ${{ secrets.SF_DEV_USERNAME }}
+  SF_DEV_PASSWORD: ${{ secrets.SF_DEV_PASSWORD }}
 
     
 jobs:
@@ -34,9 +34,9 @@ jobs:
         
       - name: Run dbt models
         env:
-          SF_ACCOUNT: ${{ secrets.SF_DEV_ACCOUNT }}
-          SF_USERNAME: ${{ secrets.SF_DEV_USERNAME }}
-          SF_PASSWORD: ${{ secrets.SF_DEV_PASSWORD }}
+          SF_DEV_ACCOUNT: ${{ secrets.SF_DEV_ACCOUNT }}
+          SF_DEV_USERNAME: ${{ secrets.SF_DEV_USERNAME }}
+          SF_DEV_PASSWORD: ${{ secrets.SF_DEV_PASSWORD }}
         run: dbt run
 
       - name: Test dbt models
