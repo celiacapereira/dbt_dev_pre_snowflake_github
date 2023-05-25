@@ -4,7 +4,11 @@ version: 2
 sources:
   - name: titanic
     description: source tpch data
-    database: DEV
+    database: |
+      {%- if  target.name == "dev" -%} DEV
+      {%- elif target.name == "pre"  -%} PRE
+      {%- else -%} invalid_database
+      {%- endif -%}
     schema: RAW
     tables:
       - name: TITANIC_RAW
