@@ -13,7 +13,7 @@ env:
   SF_PRE_USERNAME: ${{ secrets.SF_PRE_USERNAME }}
   SF_PRE_PASSWORD: ${{ secrets.SF_PRE_PASSWORD }}
   SF_PRE_DATABASE: ${{ secrets.SF_PRE_DATABASE }}
-  SF_PRE_WAREHOUSE: ${{ secrets.SF_PRE_WAREHOUSE }
+  SF_PRE_WAREHOUSE: ${{ secrets.SF_PRE_WAREHOUSE }}
     
 jobs:
   build:
