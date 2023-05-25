@@ -28,6 +28,7 @@ almost_final as (
     from titanic_ref inner join titanic_transformation on titanic_ref.PASSENGERID = titanic_transformation.PASSENGERID
 ),
 final as (
+SELECT
 PASSENGERID,
 SURVIVED,
 PCLASS,
