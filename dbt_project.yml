@@ -3,7 +3,7 @@ name: 'SNOWFLAKE_DEVOPS'
 version: '1.0.0'
 config-version: 2
 
-profile: 'snowflake-db.dev'
+profile: 'snowflake-db'
 
 model-paths: ["models"]
 analysis-paths: ["analyses"]
