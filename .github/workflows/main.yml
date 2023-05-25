@@ -4,6 +4,12 @@ on:
   push:
   pull_request:
     branches: [ "dev_branch" ]
+env:
+  DBT_PROFILES_DIR: ./
+  SF_DEV_ACCOUNT: ${{ secrets.SF_DEV_ACCOUNT }}
+  SF_DEV_USERNAME: ${{ secrets.SF_DEV_USERNAME }}
+  SF_DEV_PASSWORD: ${{ secrets.SF_DEV_PASSWORD }}
+
     
 jobs:
   build:
@@ -27,6 +33,10 @@ jobs:
           dbt deps
         
       - name: Run dbt models
+        env:
+          SF_DEV_ACCOUNT: ${{ secrets.SF_DEV_ACCOUNT }}
+          SF_DEV_USERNAME: ${{ secrets.SF_DEV_USERNAME }}
+          SF_DEV_PASSWORD: ${{ secrets.SF_DEV_PASSWORD }}
         run: dbt run
 
       - name: Test dbt models
