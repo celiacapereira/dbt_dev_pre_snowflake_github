@@ -15,29 +15,7 @@ env:
   SF_PRE_DATABASE: ${{ secrets.SF_PRE_DATABASE }}
   SF_PRE_WAREHOUSE: ${{ secrets.SF_PRE_WAREHOUSE }}
     
-jobs:
-#   build:
-#     runs-on: ubuntu-latest
-    
-#     steps:
-#       - name: Check out
-#         uses: actions/checkout@master
-        
-#       - uses: actions/setup-python@v1
-#         with:
-#           python-version: "3.7.x"   
-         
-#       - name: Install dependencies
-#         run: |
-#          pip install dbt-snowflake
-#          dbt deps   
-      
-#       - name: Run dbt models
-#         run: dbt run  --target dev
-        
-#       - name: Test dbt models
-#         run: dbt test
-        
+jobs:   
   deploy-to-pre:
     runs-on: ubuntu-latest
     environment:
