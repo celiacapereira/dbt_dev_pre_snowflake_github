@@ -1,58 +1,25 @@
-# my-snowflake-db:
-#   target: dev
-#   outputs:
-#     dev:
-#       type: snowflake
-#       account:  ${{ secrets.SF_DEV_ACCOUNT }}
-
-#       # User/password auth
-#       user:  ${{ secrets.SF_DEV_USERNAME }}
-#       password:  ${{ secrets.SF_DEV_PASSWORD }}
-#       role: ACCOUNTADMIN
-#       database: DEV
-#       warehouse: COMPUTE_WH
-#       schema: REPORT
-# #      threads: [1 or more]
-#       client_session_keep_alive: False
-# #      query_tag: [anything]
-
-# default:
-#   target: dev
-#   outputs:
-#     dev:
-#     type: snowflake
-#     threads: 1
-#     SF_ACCOUNT:  ${{ secrets.SF_DEV_ACCOUNT }}
-#     SF_USERNAME: ${{ secrets.SF_DEV_USERNAME }}
-#     SF_PASSWORD: ${{ secrets.SF_DEV_PASSWORD }}
-#     role: "ACCOUNTADMIN"
-#     database: "REPORT"
-#     warehouse: "COMPUTE_WH"
-#     schema: "REPORT"
-#     client_session_keep_alive: False
-#     query_tag: github_action_query
-
 
 # default:
 #   outputs:
 #     default:
 #       type: snowflake
 #       threads: 1
-#       account: ${{ secrets.SF_DEV_ACCOUNT }}
-#       user: ${{ secrets.SF_DEV_USERNAME }}
-#       password: ${{ secrets.SF_DEV_PASSWORD }}
+#       account: "{{ env_var('SF_DEV_ACCOUNT') }}"
+#       user: "{{ env_var('SF_DEV_USERNAME') }}"
+#       password: "{{ env_var('SF_DEV_PASSWORD') }}"
 #       role: ACCOUNTADMIN
-#       database: REPORT
+#       database: DEV
 #       warehouse: COMPUTE_WH
 #       schema: REPORT
 #       client_session_keep_alive: False
 #       query_tag: github_action_query
-      
-default:
+
+
+snowflake-db:
+  target: dev
   outputs:
-    default:
+    dev:
       type: snowflake
-      threads: 1
       account: "{{ env_var('SF_DEV_ACCOUNT') }}"
       user: "{{ env_var('SF_DEV_USERNAME') }}"
       password: "{{ env_var('SF_DEV_PASSWORD') }}"
@@ -61,4 +28,14 @@ default:
       warehouse: COMPUTE_WH
       schema: REPORT
       client_session_keep_alive: False
-      query_tag: github_action_query
+
+    pre:
+      type: snowflake
+      account: "{{ env_var('SF_PRE_ACCOUNT') }}"
+      user: "{{ env_var('SF_PRE_USERNAME') }}"
+      password: "{{ env_var('SF_PRE_PASSWORD') }}"
+      role: ACCOUNTADMIN
+      database: "{{ env_var('SF_PRE_DATABASE') }}"
+      warehouse: "{{ env_var('SF_PRE_WAREHOUSE') }}"
+      schema: REPORT
+      client_session_keep_alive: False

@@ -9,7 +9,11 @@ env:
   SF_DEV_ACCOUNT: ${{ secrets.SF_DEV_ACCOUNT }}
   SF_DEV_USERNAME: ${{ secrets.SF_DEV_USERNAME }}
   SF_DEV_PASSWORD: ${{ secrets.SF_DEV_PASSWORD }}
-
+  SF_PRE_ACCOUNT: ${{ secrets.SF_PRE_ACCOUNT }}
+  SF_PRE_USERNAME: ${{ secrets.SF_PRE_USERNAME }}
+  SF_PRE_PASSWORD: ${{ secrets.SF_PRE_PASSWORD }}
+  SF_PRE_DATABASE: ${{ secrets.SF_PRE_DATABASE }}
+  SF_PRE_WAREHOUSE: ${{ secrets.SF_PRE_WAREHOUSE }}
     
 jobs:
   build:
