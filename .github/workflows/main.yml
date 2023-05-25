@@ -38,29 +38,5 @@ jobs:
         
       - name: Test dbt models
         run: dbt test
-        
-  deploy-to-pre:
-    runs-on: ubuntu-latest
-    environment:
-      name: PRE
-    needs: build  
-    
-    steps:
-      - name: Check out
-        uses: actions/checkout@master
-        
-      - uses: actions/setup-python@v1
-        with:
-          python-version: "3.7.x"   
-         
-      - name: Install dependencies
-        run: |
-         pip install dbt-snowflake
-         dbt deps   
-      
-      - name: Run dbt models
-        run: dbt run  --target pre
-        
-#       - name: Test dbt models
-#         run: dbt test
+
 
