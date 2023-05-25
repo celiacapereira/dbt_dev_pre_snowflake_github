@@ -14,7 +14,26 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    
+    steps:
+      - name: Check out
+        uses: actions/checkout@master
+        
+      - uses: actions/setup-python@v1
+        with:
+          python-version: "3.7.x"   
+         
+      - name: Install dependencies
+        run: |
+         pip install dbt
+         dbt deps   
+      
+      - name: Run dbt models
+        run: dbt run   
+        
+      - name: Test dbt models
+        run: dbt test
+        
 #     steps:
 #       - uses: actions/checkout@v3
 
@@ -41,22 +60,4 @@ jobs:
 
 #       - name: Test dbt models
 #         run: dbt test    
-      steps:
-        - name: Check out
-          uses: actions/checkout@master
 
-        - uses: actions/setup-python@v1
-          with:
-            python-version: "3.7.x"
-
-        - name: Install dependencies
-            run: |
-            pip install dbt
-            dbt deps
-
-        # dbt related commands here - run use --target prod/dev to run for specific environments
-        - name: Run dbt models
-            run: dbt run
-
-        - name: Test dbt models
-            run: dbt test
