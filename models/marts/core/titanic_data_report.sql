@@ -50,7 +50,7 @@ CASE
     WHEN AGE >=70 and AGE <80  THEN '0-79'
     WHEN AGE >=80 and AGE <90  THEN '0-89'
 END AS AGE_RANGE
-FROM almost_final;
+FROM almost_final
 )
 
 select 
