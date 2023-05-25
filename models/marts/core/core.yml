@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: titanic_report
+  - name: titanic_data_report
     description: titanic transformed
     columns:
       - name: passengerid
