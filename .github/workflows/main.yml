@@ -41,7 +41,7 @@ jobs:
   deploy-to-pre:
     runs-on: ubuntu-latest
     environment:
-      name: Pre-Prod
+      name: PRE
     needs: build  
     
     steps:
