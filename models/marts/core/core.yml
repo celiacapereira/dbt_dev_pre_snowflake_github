@@ -31,6 +31,6 @@ models:
         description: ticket value
       - name: EMBARKED
         description: place where the pessenger embarked
-       - name: AGE_RANGE
-         description: age range
+      - name: AGE_RANGE
+        description: age range
                                             
