@@ -1,36 +1,36 @@
-version: 2
+# version: 2
 
-models:
-  - name: titanic_data_report
-    description: titanic transformed
-    columns:
-      - name: passengerid
-        description: primary key of the model
-        tests:
-          - unique
-          - not_null
-      - name: SURVIVED
-        description: pessenger survived or not
-      - name: PCLASS
-        description: passenger class
-        tests:
-          - accepted_values:
-              values: [1,2,3]
-      - name: name
-        description: passenger name                
-      - name: sex
-        description: passenger sex    
-        tests:
-          - accepted_values:
-              values: ["female", "male"]
-      - name: SIBSP
-        description: number of family on titanic
-      - name: PARCH
-        description: number of siblings
-      - name: FARE
-        description: ticket value
-      - name: EMBARKED
-        description: place where the pessenger embarked
-#       - name: AGE_RANGE
-#         description: age range
+# models:
+#   - name: titanic_data_report
+#     description: titanic transformed
+#     columns:
+#       - name: passengerid
+#         description: primary key of the model
+#         tests:
+#           - unique
+#           - not_null
+#       - name: SURVIVED
+#         description: pessenger survived or not
+#       - name: PCLASS
+#         description: passenger class
+#         tests:
+#           - accepted_values:
+#               values: [1,2,3]
+#       - name: name
+#         description: passenger name                
+#       - name: sex
+#         description: passenger sex    
+#         tests:
+#           - accepted_values:
+#               values: ["female", "male"]
+#       - name: SIBSP
+#         description: number of family on titanic
+#       - name: PARCH
+#         description: number of siblings
+#       - name: FARE
+#         description: ticket value
+#       - name: EMBARKED
+#         description: place where the pessenger embarked
+# #       - name: AGE_RANGE
+# #         description: age range
                                             
