@@ -34,7 +34,7 @@ snowflake-db:
       account: "{{ env_var('SF_PRE_ACCOUNT') }}"
       user: "{{ env_var('SF_PRE_USERNAME') }}"
       password: "{{ env_var('SF_PRE_PASSWORD') }}"
-      role: ACCOUNTADMIN
+      role: SYSADMIN
       database: "{{ env_var('SF_PRE_DATABASE') }}"
       warehouse: "{{ env_var('SF_PRE_WAREHOUSE') }}"
       schema: REPORT
