@@ -3,7 +3,7 @@
 version: 2
 sources:
   - name: titanic
-    description: source tpch data
+    description: source data
     database: |
       {%- if  target.name == "dev" -%} DEV
       {%- elif target.name == "pre"  -%} PRE
